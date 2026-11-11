@@ -256,4 +256,6 @@
 
   applyLang();
   loadLeak().catch(() => {});
+  const h = decodeURIComponent(location.hash.replace(/^#\/?/, "")).trim();
+  if (/^0x[0-9a-fA-F]{40}$/.test(h)) { $("addr").value = h; doCheck(); }
 })();
