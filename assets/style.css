@@ -56,4 +56,14 @@ footer{padding:26px 0 44px}
 @media(max-width:520px){h1{font-size:25px}.stats div{min-width:0;flex:1}}
 .cta{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:0 0 22px}
 button.primary.big{font-size:15.5px;padding:14px 24px}
-.cta-hint{font-size:13px;color:var(--dim)}
+.cta-hint{font-size:13px;color:var(--dim)}.gas{margin-top:11px;font-size:12.5px;display:grid;gap:4px}
+.gas .ok{color:var(--ok)} .gas .bad{color:var(--warn)}
+.who a{color:var(--accent)}
+.modal{position:fixed;inset:0;background:rgba(6,8,12,.72);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;width:100%;max-width:380px}
+.modal-box h2{margin:0 0 14px}
+.wallets{display:grid;gap:8px;margin-bottom:14px}
+.wallet{display:flex;align-items:center;gap:10px;background:#0e1219;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-weight:600;font-size:14px;color:var(--txt);text-align:left}
+.wallet:hover{border-color:var(--accent)}
+.wallet img{width:20px;height:20px;border-radius:5px}
+.wdot{width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
