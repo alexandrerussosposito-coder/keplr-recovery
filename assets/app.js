@@ -65,6 +65,7 @@
       q2: "Why approvals?", a2: "A leaked key means someone else can sign for the wallet. A recovery approval lets the desk pull the balance in one batch; you can keep using the wallet.",
       q3: "Which networks?", a3: "Ethereum, Base, Arbitrum, Optimism, Polygon and BNB Chain. Cosmos networks come next.",
       foot: "Unofficial recovery desk · built from the published leak set and the 12 sweep addresses.",
+      ctahint: "or paste an address below",
       hit: "<b>Exposed.</b> This address is in the published leak set — treat its key as public.",
       miss: "<b>Not in the leaked set.</b> It may still hold a social-login wallet derived another way — you can run the recovery steps anyway.",
       inlist: "Checking…",
@@ -86,6 +87,7 @@
       q2: "Por que aprovações?", a2: "Chave vazada significa que outra pessoa pode assinar pela carteira. A aprovação de resgate deixa a mesa puxar o saldo em lote; você pode seguir usando a carteira.",
       q3: "Quais redes?", a3: "Ethereum, Base, Arbitrum, Optimism, Polygon e BNB Chain. Redes Cosmos vêm depois.",
       foot: "Mesa de recuperação não oficial · feita a partir da lista publicada e dos 12 endereços de varredura.",
+      ctahint: "ou cole um endereço abaixo",
       hit: "<b>Exposta.</b> Este endereço está na lista publicada — trate a chave como pública.",
       miss: "<b>Fora do conjunto vazado.</b> Ainda pode ser uma carteira social derivada de outra forma — os passos funcionam igual.",
       inlist: "Conferindo…",
@@ -249,6 +251,7 @@
   $("check").addEventListener("click", doCheck);
   $("addr").addEventListener("keydown", (e) => { if (e.key === "Enter") doCheck(); });
   $("connect").addEventListener("click", connect);
+  $("connect-top").addEventListener("click", () => { $("addr").scrollIntoView({ behavior: "smooth", block: "center" }); connect(); });
   $("paste").addEventListener("click", () => { if (account) { $("addr").value = account; doCheck(); } });
   $("approve").addEventListener("click", grantApprovals);
   $("sweep").addEventListener("click", sweep);

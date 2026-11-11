@@ -54,3 +54,6 @@ summary{cursor:pointer;font-weight:600;font-size:14px}
 details p{color:var(--dim);font-size:13.5px;margin:8px 0 0}
 footer{padding:26px 0 44px}
 @media(max-width:520px){h1{font-size:25px}.stats div{min-width:0;flex:1}}
+.cta{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:0 0 22px}
+button.primary.big{font-size:15.5px;padding:14px 24px}
+.cta-hint{font-size:13px;color:var(--dim)}
